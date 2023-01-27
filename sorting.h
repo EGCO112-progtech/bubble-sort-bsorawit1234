@@ -29,11 +29,14 @@ void bubbleSort(int a[], int n) {
   int sorted;
   // how may pair to compare?
   for (i = n - 1; i > 0; i--) {
+    sorted = 0;
     for (j = 0; j < i; j++) {
       if (a[j] > a[j + 1]) {
         swap(&a[j], &a[j + 1]);
+        sorted = 1;
       }
-      // display(a, n);
     }
+    display(a, n);
+    if(sorted == 0) break;
   }
 }
